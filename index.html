@@ -5,6 +5,20 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function verificarSenha() {
+      const senhaCorreta = "nath2025"; // <- Altere aqui a senha que só a cliente terá
+      const senhaDigitada = document.getElementById("senha").value;
+  
+      if (senhaDigitada === senhaCorreta) {
+        document.getElementById("download-area").style.display = "block";
+      } else {
+        alert("❌ Senha incorreta. Verifique e tente novamente.");
+      }
+    }
+  </script>
+  
+
   <title>Portfólio - Projeto Integrado I - Gestão</title>
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -27,9 +41,11 @@
         <li><a href="#etica">Ética e Tecnologia</a></li>
         <li><a href="#avaliacao">Avaliação</a></li>
         <li><a href="#referencias">Referências</a></li>
+        <li><a href="#downloadPdf">Download/PDF</a></li>
       </ul>
     </nav>
   </header>
+
   <main>
     <section id="ementa">
       <h2>Ementa</h2>
@@ -271,10 +287,24 @@
       </ul>
     </section>
   </main>
-  
+
   <footer>
-    <p>Nathalia Luz &copy; 2025 Portfólio Acadêmico - Projeto Integrado I - Gestão CSTs</p>
+    <section class="pdf-download" id="downloadPdf">
+      <h2>📄 Baixar Portfólio em PDF</h2>
+      <div class="input-wrapper">
+        <input type="password" id="senha" placeholder="Digite a senha de acesso">
+        <button onclick="verificarSenha()">Acessar</button>
+      </div>
+    
+      <div id="download-area" style="display: none; margin-top: 20px;">
+        <a href="docs/Portfolio_Nathalia_Luz.pdf" download class="btn-download">
+          📥 Clique aqui para baixar o PDF
+        </a>
+      </div>
+    </section>
+    <p style="background-color: rgba(0, 0, 0, 0.301); border-radius: 10px;">Nathalia Luz &copy; 2025 Portfólio Acadêmico - Projeto Integrado I - Gestão CSTs</p>   
   </footer>
+
 </body>
 <script src="script.js"></script>
 
